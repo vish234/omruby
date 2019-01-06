@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CrewCicuit</title>
+    <title>One Month Rails Project</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= link_to "Home", root_path%>
-    <%= link_to "About", about_path%>
-    <%= link_to "Contacts", contacts_path%>
-    <%= yield %>
+
+    <div class="container">
+
+      <!-- Navigation Bar -->
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "Contact", "#", class: "nav-link" %></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">One Month Rails</h3>
+      </div>
+
+      <!-- Page Content -->
+      <%= yield %>
+      
+      <!-- Footer -->
+      <footer>
+        <hr>
+        <p>© 2016 One Month</p>
+      </footer>
+
+    </div>
   </body>
 </html>
